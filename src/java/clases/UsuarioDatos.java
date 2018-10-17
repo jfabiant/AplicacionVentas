@@ -14,7 +14,7 @@ public class UsuarioDatos {
     
     public Connection conexion () throws Exception {
         String driver = "com.mysql.jdbc.Driver";
-        String cadena = "jdbc:mysql://localhost:3306/dbjava";
+        String cadena = "jdbc:mysql://localhost:3306/ventas";
         String usuario = "root";
         String clave = "";
         
