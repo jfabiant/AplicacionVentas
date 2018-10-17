@@ -18,6 +18,7 @@ public class UsuarioDatos {
         String usuario = "root";
         String clave = "";
         
+        
         Class.forName(driver);
         con = DriverManager.getConnection(cadena, usuario, clave);
         
