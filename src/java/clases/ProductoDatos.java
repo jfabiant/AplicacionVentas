@@ -14,7 +14,7 @@ public class ProductoDatos {
     
     public Connection conexion () throws Exception {
         String driver = "com.mysql.jdbc.Driver";
-        String cadena = "jdbc:mysql://localhost:3306/dbjava";
+        String cadena = "jdbc:mysql://localhost:3306/ventas";
         String usuario = "root";
         String clave = "";
         
@@ -31,8 +31,8 @@ public class ProductoDatos {
         while(res.next()){
             Producto prod = new Producto();
             
-            prod.setCodigo(res.getInt(1));
-            prod.setNombre(res.getString(2));
+            prod.setCodigo(res.getString("codigo"));
+            prod.setNombre(res.getString("nombre"));
             prod.setStock(res.getInt(3));
             prod.setPrecio(res.getDouble(4));
             
@@ -43,7 +43,7 @@ public class ProductoDatos {
     
     public void agregarProductos (Producto prod) throws Exception {
         agregarProductos = conexion().prepareStatement("insert into productos (codigo, nombre, precio, stock) values (?, ?, ?, ?)");
-        agregarProductos.setInt(1, prod.getCodigo());
+        agregarProductos.setString(1, prod.getCodigo());
         agregarProductos.setString(2, prod.getNombre());
         agregarProductos.setDouble(3, prod.getPrecio());
         agregarProductos.setInt(4, prod.getStock());
@@ -59,7 +59,7 @@ public class ProductoDatos {
         while(res.next()){
             Producto prod = new Producto();
             
-            prod.setCodigo(res.getInt(1));
+            prod.setCodigo(res.getString(1));
             prod.setNombre(res.getString(2));
             prod.setPrecio(res.getDouble(3));
             prod.setStock(res.getInt(4));

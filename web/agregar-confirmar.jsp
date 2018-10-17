@@ -2,7 +2,7 @@
 <jsp:useBean id="prod" class="clases.Producto" scope="page"/>
 <jsp:setProperty name="prod" property="*" />
 <%
-    int codigo = Integer.parseInt(request.getParameter("codigo"));
+    String codigo = request.getParameter("codigo");
     String nombre = request.getParameter("nombre");
     int stock = Integer.parseInt(request.getParameter("stock"));
     double precio = Double.parseDouble(request.getParameter("precio"));

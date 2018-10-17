@@ -45,7 +45,8 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <% while(i.hasNext()){ prod = (Producto)i.next(); %>
+                                    <% while(i.hasNext()){
+                                        prod = (Producto)i.next(); %>
                                     <tr>
                                         <td> <%= prod.getCodigo() %> </td>
                                         <td> <%= prod.getNombre()%> </td>
